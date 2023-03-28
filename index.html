@@ -1,24 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2979b08665.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Instagram Clone</title>
 </head>
+
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-6">
-                <h1><i class="fab fa-instagram"></i> Instagram</h1>
+        <div class="row align-items-center">
+            <!--Logo-->
+            <div class="col-7">
+                <h2><i class="fab fa-instagram"></i> Instagram</h2>
             </div>
-            <div class="col-6"></div>
+            <!--end Logo-->
+
+            <!--Button New Post-->
+            <div class="col-sm-4 d-flex justify-content-md-end">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Create a new post
+                </button>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create a new post</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Caption:</h6>
+                                <textarea placeholder="Add the caption of your post here" id="caption" cols="60"
+                                    rows="3"></textarea>
+                                <div class="caption-buttons">
+                                    <button class="btn btn-outline-secondary" type="button"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+                                            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                            <path
+                                                d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+                                        </svg></button>
+                                    <button class="btn btn-outline-secondary" type="button"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end Button New Post-->
+
+            <!--Dropdown-->
+            <div class="col-1">
+                <div class="btn-group d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-gear-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--end Dropdown-->
+
+            <!--Botones de Cambio-->
+            <nav>
+                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-grid-3x3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13zM1.5 1a.5.5 0 0 0-.5.5V5h4V1H1.5zM5 6H1v4h4V6zm1 4h4V6H6v4zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5v-4zm1 0v4h4v-4H6zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11h-4zm0-1h4V6h-4v4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11v4zm-1 0V1H6v4h4z" />
+                        </svg></button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                        type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                        </svg></button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active pt-4" id="nav-profile" role="tabpanel"
+                    aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <img class="col-4 p-1"
+                                src="https://img.texasmonthly.com/2023/03/kangaroos-texas.jpg?auto=compress&crop=faces&fit=crop&fm=jpg&h=1050&ixlib=php-3.3.1&q=45&w=1400"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://i.natgeofe.com/k/aa4c480f-89ec-4c21-97c3-4348a9c310bf/kangaroo-joey_4x3.jpg"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://i.guim.co.uk/img/media/3c1c75033e148dca5c432382ea525819d2077589/0_40_2200_1320/master/2200.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=3d7926be8fd8629948f0b7b4ca5aa00a"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://www.thoughtco.com/thmb/OqANUu4U3tNL1Uo2n19uX6PzbM8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/red_kangaroo-24c18ab08dc145f1a798abd4b820390a.jpg"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://www.treehugger.com/thmb/NeM_WZxf1POLzjxw1cDLAJzNuVw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/5-b7a380b2210640d2b00a474738ebab7b.jpg"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2018/01/screen-shot-2018-01-17-at-11-01-00-am-1.png?fit=1600%2C1000&ssl=1"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://brisbanekids.com.au/wp-content/uploads/2015/02/fun-kangaroo-facts.jpg"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://bloximages.chicago2.vip.townnews.com/yorknewstimes.com/content/tncms/assets/v3/editorial/5/0c/50cc2260-3933-11ed-a401-8be7f27d8a7b/632a3e2801304.image.jpg?resize=1200%2C800"
+                                alt="kangaroos"></img>
+                            <img class="col-4 p-1"
+                                src="https://bringmethenews.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY0MjY0NzA3OTc1MjkyODc1/animal-zoo-borysew-kangaroo-3472263.jpg"
+                                alt="kangaroos"></img>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                    tabindex="0">
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">A family of kangaroos!!!</h5>
+                                <p class="m-2">08/26</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://img.texasmonthly.com/2023/03/kangaroos-texas.jpg?auto=compress&crop=faces&fit=crop&fm=jpg&h=1050&ixlib=php-3.3.1&q=45&w=1400"
+                                class="rounded mx-auto d-block" alt="kangaroo1">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">206 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">Mom & son!</h5>
+                                <p class="m-2">04/09</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://i.natgeofe.com/k/aa4c480f-89ec-4c21-97c3-4348a9c310bf/kangaroo-joey_4x3.jpg"
+                                class="rounded mx-auto d-block" alt="kangaroo2">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">238 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">There's a FIGHT!</h5>
+                                <p class="m-2">06/19</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://i.guim.co.uk/img/media/3c1c75033e148dca5c432382ea525819d2077589/0_40_2200_1320/master/2200.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=3d7926be8fd8629948f0b7b4ca5aa00a"
+                                class="rounded mx-auto d-block" alt="kangaroo2">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">176 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">boing, boing, boing!</h5>
+                                <p class="m-2">03/33</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://www.thoughtco.com/thmb/OqANUu4U3tNL1Uo2n19uX6PzbM8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/red_kangaroo-24c18ab08dc145f1a798abd4b820390a.jpg"
+                                class="rounded mx-auto d-block" alt="kangaroo2">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">276 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">Meet my pal...</h5>
+                                <p class="m-2">04/12</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://www.treehugger.com/thmb/NeM_WZxf1POLzjxw1cDLAJzNuVw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/5-b7a380b2210640d2b00a474738ebab7b.jpg"
+                                class="rounded mx-auto d-block" alt="kangaroo2">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">196 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <div class="col-md-6 col-sm-9">
+                            <div class="border border-1 d-flex justify-content-between">
+                                <h5 class="m-2">lil' KISS!</h5>
+                                <p class="m-2">10/26</p>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2018/01/screen-shot-2018-01-17-at-11-01-00-am-1.png?fit=1600%2C1000&ssl=1"
+                                class="rounded mx-auto d-block" alt="kangaroo2">
+                            <div class="border border-1 d-block">
+                                <h6 class="m-2">296 likes</h6>
+                                <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
+                                    ullam?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--end Column Display-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>
